@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#98DAE6"
+    android:background="#ACB0C1"
     tools:context=".MainActivity2">
 
     <LinearLayout
@@ -13,22 +13,31 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etAngka1"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Masukkan Nama"
-            android:inputType="text"
-            android:textColorHint="@color/white" />
+            android:text="Silahkan Pilih"
+            android:paddingTop="5dp"
+            android:background="#10174B"
+            android:textStyle="bold"
+            android:textSize="12pt"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinsbold"
+            android:textAlignment="center"/>
 
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="25pt"
+            android:layout_marginTop="55pt"
             android:orientation="vertical">
+            <ImageView
+                android:id="@+id/myImageView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bag55"/>
 
             <Button
                 android:id="@+id/kalkulator"
@@ -36,15 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
-                android:text="Kalkulator" />
-
-            <Button
-                android:id="@+id/input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:text="Input" />
+                android:backgroundTint="#0F205F"
+                android:text="Kalkulator"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/Loginpage"
@@ -52,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+                android:backgroundTint="#0F205F"
                 android:text="Login page" />
 
             <Button
@@ -60,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+                android:backgroundTint="#0F205F"
                 android:text="List Hewan" />
             <Button
                 android:id="@+id/btnRvbuku"
@@ -67,24 +72,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
+                android:backgroundTint="#0F205F"
                 android:text="Recycle View" />
+            <Button
+                android:id="@+id/btnBuah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:backgroundTint="#0F205F"
+                android:text="Recycle view Buah" />
+            <Button
+                android:id="@+id/btnMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:backgroundTint="#0F205F"
+                android:text="Recycle view Movie" />
+
+
+
         </LinearLayout>
 
 
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/poppinsextra"
-            android:text="Hello welcome to my word"
-            android:textColor="#FFFEFE"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
 

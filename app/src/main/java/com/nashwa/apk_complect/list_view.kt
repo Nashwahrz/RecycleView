@@ -1,6 +1,5 @@
 package com.nashwa.apk_complect
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView

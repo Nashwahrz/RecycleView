@@ -14,6 +14,8 @@ class MainActivity2 : AppCompatActivity() {
     lateinit var Loginpage: Button
     lateinit var listView : Button
     lateinit var btnRvbuku : Button
+    lateinit var btnRvBuah : Button
+    lateinit var btnMovie : Button
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,8 @@ class MainActivity2 : AppCompatActivity() {
         Loginpage = findViewById(R.id.Loginpage)
         listView = findViewById(R.id.listView)
         btnRvbuku = findViewById(R.id.btnRvbuku)
+        btnRvBuah = findViewById(R.id.btnBuah)
+        btnMovie = findViewById(R.id.btnMovie)
 
         kalkulator.setOnClickListener() {
             val intent = Intent(this, MainActivity3::class.java)
@@ -41,6 +45,15 @@ class MainActivity2 : AppCompatActivity() {
             val intent = Intent(this, RecycleviewActivity::class.java)
             startActivity(intent)
         }
+        btnRvBuah.setOnClickListener(){
+            val intent = Intent(this, CustomImageRecycleView::class.java)
+            startActivity(intent)
+        }
+        btnMovie.setOnClickListener(){
+            val intent = Intent(this, RecycleViewCardMovie::class.java)
+            startActivity(intent)
+        }
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
