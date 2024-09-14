@@ -1,6 +1,5 @@
 package com.nashwa.apk_complect
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -10,7 +9,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class photodetail : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
