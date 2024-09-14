@@ -24,8 +24,12 @@ class CustomImageRecycleView : AppCompatActivity() {
         rv_buah.layoutManager = GridLayoutManager(this,1,
             GridLayoutManager.VERTICAL,false)
 
+
+
         val adapter = BuahAdapter(MockList.getModel() as ArrayList<ModelBuah>)
         rv_buah.adapter = adapter
+
+
 
 
 

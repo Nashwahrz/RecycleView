@@ -1,7 +1,9 @@
 package com.nashwa.apk_complect
 
+import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,23 +13,26 @@ import com.nashwa.apk_complect.adapter.MovieAdapter
 import com.nashwa.apk_complect.model.ModelMovie
 
 class RecycleViewCardMovie : AppCompatActivity() {
-    private var recycleview : RecyclerView? = null
-    private  var movieAdapter : MovieAdapter? = null
+    private var recycleview: RecyclerView? = null
+    private var movieAdapter: MovieAdapter? = null
     private var movieList = mutableListOf<ModelMovie>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_recycle_view_card_movie)
 
-        movieList = ArrayList()
         recycleview = findViewById(R.id.rv_movie) as RecyclerView
-        movieAdapter = MovieAdapter(this, movieList)
-        val layoutManager : RecyclerView.LayoutManager = GridLayoutManager(this,2)
+        movieAdapter = MovieAdapter(this, movieList) { position ->
+            // Menampilkan dialog gambar detail ketika item di-klik
+            showDetailDialog(position)
+        }
+
+        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         recycleview!!.layoutManager = layoutManager
         recycleview!!.adapter = movieAdapter
 
-        prepareMovieList(
-        )
+        prepareMovieList()
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -59,6 +64,13 @@ class RecycleViewCardMovie : AppCompatActivity() {
         movieList.add(movie)
 
         movieAdapter!!.notifyDataSetChanged()
+    }
 
+
+
+    private fun showDetailDialog(position: Int) {
+        val intent = Intent(this, photodetail::class.java)
+        intent.putExtra("imageResId", movieList[position].image) // Mengirim imageResId ke Activity photodetail
+        startActivity(intent) //
     }
 }

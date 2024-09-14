@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nashwa.apk_complect.R
 import com.nashwa.apk_complect.model.ModelBuah
 
-class BuahAdapter  (val itemList : ArrayList<ModelBuah>) :
+class BuahAdapter  (val itemList : ArrayList<ModelBuah>  ) :
+
       RecyclerView.Adapter<BuahAdapter.ModelViewHolder>() {
 
     class ModelViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
