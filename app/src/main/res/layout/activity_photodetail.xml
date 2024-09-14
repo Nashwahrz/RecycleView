@@ -20,4 +20,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="Detail Photo"/>
 
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:text="Judul Film"
+        android:textStyle="bold"
+
+        tools:ignore="MissingConstraints" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

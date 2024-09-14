@@ -1,9 +1,7 @@
 package com.nashwa.apk_complect
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -22,7 +20,8 @@ class RecycleViewCardMovie : AppCompatActivity() {
         setContentView(R.layout.activity_recycle_view_card_movie)
 
         recycleview = findViewById(R.id.rv_movie) as RecyclerView
-        movieAdapter = MovieAdapter(this, movieList) { position ->
+
+        movieAdapter = MovieAdapter(this@RecycleViewCardMovie, movieList) { position ->
             // Menampilkan dialog gambar detail ketika item di-klik
             showDetailDialog(position)
         }
@@ -66,11 +65,10 @@ class RecycleViewCardMovie : AppCompatActivity() {
         movieAdapter!!.notifyDataSetChanged()
     }
 
-
-
     private fun showDetailDialog(position: Int) {
-        val intent = Intent(this, photodetail::class.java)
-        intent.putExtra("imageResId", movieList[position].image) // Mengirim imageResId ke Activity photodetail
-        startActivity(intent) //
+        val intent = Intent(this, photodetail::class.java) // Pastikan kelas "PhotoDetail" benar
+        intent.putExtra("imageResId", movieList[position].image) // Mengirim imageResId ke Activity PhotoDetail
+        intent.putExtra("title", movieList[position].title)
+        startActivity(intent)
     }
 }
