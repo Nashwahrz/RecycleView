@@ -1,5 +1,6 @@
 package com.nashwa.apk_complect
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,8 @@ class CustomImageRecycleView : AppCompatActivity() {
 
         val adapter = BuahAdapter(MockList.getModel() as ArrayList<ModelBuah>)
         rv_buah.adapter = adapter
+
+
 
 
 

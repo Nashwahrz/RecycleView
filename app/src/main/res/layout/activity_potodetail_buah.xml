@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/imageViewDetail"
+        android:id="@+id/imgbuahdetail"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="fitCenter"
@@ -21,7 +21,7 @@
         android:contentDescription="Detail Photo"/>
 
     <TextView
-        android:id="@+id/textjuduldetail"
+        android:id="@+id/txtnamaBuah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -30,7 +30,7 @@
         android:paddingBottom="20dp"
         android:textSize="18sp"
         android:textColor="@android:color/black"
-        android:text="Judul Film"
+        android:text="Nama Buah"
         android:textStyle="bold"
 
         tools:ignore="MissingConstraints" />

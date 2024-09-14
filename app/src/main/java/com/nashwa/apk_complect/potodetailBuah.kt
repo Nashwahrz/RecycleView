@@ -9,26 +9,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class photodetail : AppCompatActivity() {
+class potodetailBuah : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_photodetail)
+        setContentView(R.layout.activity_potodetail_buah)
 
-
-        // Get the image resource ID passed from the previous activity
         val imageResId = intent.getIntExtra("imageResId", 0)
-        val title = intent.getStringExtra("title")
+        val  judul = intent.getStringExtra("deskripsi")
 
-
-        val imageView = findViewById<ImageView>(R.id.imageViewDetail)
-        val textViewTitle = findViewById<TextView>(R.id.textjuduldetail)
+        val imageView = findViewById<ImageView>(R.id.imgbuahdetail)
+        val textViewTitle = findViewById<TextView>(R.id.txtnamaBuah)
 
         imageView.setImageResource(imageResId)
-        textViewTitle.text = title ?: "No Title"
-
-
+        textViewTitle.text = judul ?: "No Title"
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
