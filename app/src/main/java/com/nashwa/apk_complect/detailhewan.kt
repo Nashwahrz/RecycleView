@@ -2,6 +2,7 @@ package com.nashwa.apk_complect
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,18 +20,22 @@ class detailhewan : AppCompatActivity() {
         val tvCiriHewan = findViewById<TextView>(R.id.tvCiriHewan)
         val txtTinggi = findViewById<TextView>(R.id.txtTinggi)
         val txtBerat = findViewById<TextView>(R.id.txtBerat)
+        val detailhewan = findViewById<ImageView>(R.id.detailhewan)
 
         // Mendapatkan data yang dikirim dari ListView
         val namaHewan = intent.getStringExtra("namaHewan")
         val ciriHewan = intent.getStringExtra("ciriHewan")
         val tinggiHewan = intent.getStringExtra("tinggiHewan")
         val beratHewan = intent.getStringExtra("beratHewan")
+        val gambarHewan = intent.getIntExtra("gambarHewan", 0)
 
         // Menampilkan data di TextView
         tvNamaHewan.text = namaHewan
         tvCiriHewan.text = ciriHewan
         txtTinggi.text = tinggiHewan
         txtBerat.text = beratHewan
+
+        detailhewan.setImageResource(gambarHewan)
 
     }
 }

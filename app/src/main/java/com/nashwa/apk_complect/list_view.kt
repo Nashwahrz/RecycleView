@@ -56,6 +56,17 @@ class list_view : AppCompatActivity() {
             "berat : 400 - 1.000 kg",
             "berat : 20 - 140 kg"
         )
+
+        val gambarHewan = listOf(
+            R.drawable.gajahh,
+            R.drawable.ular,
+            R.drawable.beruang,
+            R.drawable.panda,
+            R.drawable.ikan,
+            R.drawable.sapi,
+            R.drawable.kambing
+
+        )
             lv_item.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, namaHewan)
 
 
@@ -75,6 +86,7 @@ class list_view : AppCompatActivity() {
             intent.putExtra("ciriHewan", ciriHewan[position])
             intent.putExtra("tinggiHewan", tinggiHewan[position])
             intent.putExtra("beratHewan", beratHewan[position])
+            intent.putExtra("gambarHewan", gambarHewan[position])
 
 
 
