@@ -7,11 +7,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.nashwa.apk_complect.CustomImageRecycleView
+import com.nashwa.apk_complect.DetailBuah
 import com.nashwa.apk_complect.R
+import com.nashwa.apk_complect.RecycleviewActivity
 import com.nashwa.apk_complect.model.ModelBuah
 import com.nashwa.apk_complect.potodetailBuah
 
-class BuahAdapter  (val itemList : ArrayList<ModelBuah>  ) :
+class BuahAdapter  (
+    val itemList : ArrayList<ModelBuah>,
+     private val getActivity: CustomImageRecycleView // untuk bisa klik item, kita replace dengan getActivity
+) :
 
       RecyclerView.Adapter<BuahAdapter.ModelViewHolder>() {
 
@@ -41,11 +47,13 @@ class BuahAdapter  (val itemList : ArrayList<ModelBuah>  ) :
         holder.ItemText.setText(itemList[position].deskripsi)
 
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, potodetailBuah::class.java)
-            intent.putExtra("imageResId", itemList[position].image)  // Mengirim gambar
-            intent.putExtra("deskripsi", itemList[position].deskripsi)  // Mengirim deskripsi
-            context.startActivity(intent)  // Memulai activity detail
+            //deklarasi intent
+            val intent = Intent(getActivity, DetailBuah::class.java)
+            //baru put extra variable yang ingin dilempar
+            intent.putExtra("deskripsi", itemList[position].deskripsi)
+            intent.putExtra("image", itemList[position].image)
+            //passed ke detail
+            getActivity.startActivity(intent)
         }
     }
 

@@ -23,7 +23,7 @@ class RecycleViewCardMovie : AppCompatActivity() {
 
         movieAdapter = MovieAdapter(this@RecycleViewCardMovie, movieList) { position ->
             // Menampilkan dialog gambar detail ketika item di-klik
-            showDetailDialog(position)
+
         }
 
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
@@ -40,35 +40,30 @@ class RecycleViewCardMovie : AppCompatActivity() {
     }
 
     private fun prepareMovieList() {
-        var movie = ModelMovie("Avatar", R.drawable.avatar)
+        var movie = ModelMovie("Avatar", R.drawable.avatar, "27 November 2023",  getString(R.string.sinopsis1) )
         movieList.add(movie)
 
-        movie = ModelMovie("Batman", R.drawable.batman)
+        movie = ModelMovie("Batman", R.drawable.batman, "26 Oktoberr 2023",  getString(R.string.sinopsis1))
         movieList.add(movie)
-        movie = ModelMovie("End Game", R.drawable.end_game)
+        movie = ModelMovie("End Game", R.drawable.end_game, "01 Januari 2024",  getString(R.string.sinopsis2))
         movieList.add(movie)
-        movie = ModelMovie("Hulk", R.drawable.hulk)
+        movie = ModelMovie("Hulk", R.drawable.hulk, "06 Juli 2023",  getString(R.string.sinopsis3))
         movieList.add(movie)
-        movie = ModelMovie("Inception", R.drawable.inception)
+        movie = ModelMovie("Inception", R.drawable.inception, "06 Juli 2023",  getString(R.string.sinopsis4))
         movieList.add(movie)
-        movie = ModelMovie("Jumanji", R.drawable.jumanji)
+        movie = ModelMovie("Jumanji", R.drawable.jumanji, "01 Agustus 2023",  getString(R.string.sinopsis3))
         movieList.add(movie)
-        movie = ModelMovie("Lucy", R.drawable.lucy)
+        movie = ModelMovie("Lucy", R.drawable.lucy, "08 Juli 2023",  getString(R.string.sinopsis5))
         movieList.add(movie)
-        movie = ModelMovie("Jurassic World", R.drawable.jurassic_world)
+        movie = ModelMovie("Jurassic World", R.drawable.jurassic_world, "06 Juli 2023",  getString(R.string.sinopsis3))
         movieList.add(movie)
-        movie = ModelMovie("Spider Man", R.drawable.spider_man)
+        movie = ModelMovie("Spider Man", R.drawable.spider_man, "06 Juli 2023",  getString(R.string.sinopsis4))
         movieList.add(movie)
-        movie = ModelMovie("Venom", R.drawable.venom)
+        movie = ModelMovie("Venom", R.drawable.venom, "16 Juni 2023",  getString(R.string.sinopsis5))
         movieList.add(movie)
 
         movieAdapter!!.notifyDataSetChanged()
     }
 
-    private fun showDetailDialog(position: Int) {
-        val intent = Intent(this, photodetail::class.java) //
-        intent.putExtra("imageResId", movieList[position].image) // Mengirim imageResId ke Activity PhotoDetail
-        intent.putExtra("title", movieList[position].title)
-        startActivity(intent)
-    }
+
 }

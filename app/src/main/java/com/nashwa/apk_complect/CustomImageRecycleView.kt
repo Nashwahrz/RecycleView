@@ -27,7 +27,7 @@ class CustomImageRecycleView : AppCompatActivity() {
 
 
 
-        val adapter = BuahAdapter(MockList.getModel() as ArrayList<ModelBuah>)
+        val adapter = BuahAdapter(MockList.getModel() as ArrayList<ModelBuah>, this)
         rv_buah.adapter = adapter
 
 

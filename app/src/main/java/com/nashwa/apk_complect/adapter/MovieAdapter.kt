@@ -1,5 +1,6 @@
 package com.nashwa.apk_complect.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.nashwa.apk_complect.R
 import com.nashwa.apk_complect.RecycleViewCardMovie
 import com.nashwa.apk_complect.model.ModelMovie
+import com.nashwa.apk_complect.photodetail
 
 class MovieAdapter constructor(
     private val getActivity: RecycleViewCardMovie,// bisa diklik
@@ -29,7 +32,8 @@ RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie_car, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_movie_car, parent, false)
         return MovieViewHolder(view)
     }
 
@@ -42,14 +46,30 @@ RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         holder.txtMovie.text = movie.title
         holder.imgMovie.setImageResource(movie.image)
 
+
         // Menambahkan event klik
         holder.itemView.setOnClickListener {
-            itemClickListener(position)
-            Toast.makeText(
-                getActivity, movieList[position].title,
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(
+                getActivity,
+                photodetail::class.java
 
+            )
+
+
+            intent.putExtra(
+                "imageResId",
+                movieList[position].image
+            ) // Mengirim imageResId ke Activity PhotoDetail
+            intent.putExtra("title", movieList[position].title)
+            intent.putExtra("tanggal", movieList[position].tanggal)
+            intent.putExtra("sinopsis", movieList[position].sinopsis)
+
+            getActivity.startActivity(intent)
         }
+
     }
 }
+
+
+
+

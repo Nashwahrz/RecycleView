@@ -8,33 +8,52 @@
     tools:context=".photodetail">
 
 
-
-    <ImageView
-        android:id="@+id/imageViewDetail"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Detail Photo"/>
-
-    <TextView
-        android:id="@+id/textjuduldetail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:text="Judul Film"
-        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewDetail"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/avatar"
+            android:contentDescription="Detail Photo"
+            android:scaleType="centerCrop" />
 
+        <TextView
+            android:id="@+id/textjuduldetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Judul Film"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tctDetailRelease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Tanggal Release : 20 November 2023"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:id="@+id/txtDetailSinopsi"
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menyandang status jomblo ternyata membuat Jono merasa makin resah sehingga ia memutuskan untuk mengakhiri status tersebut secepatnya. Bersama Niko sahabatnya, Jono mulai melakukan berbagai upaya untuk mendapatkan pacar. Hingga suatu hari calon pacar potensial berhasil didapatkannya dari dunia maya. Setelah berkenalan, Jono berharap bisa sampai ke tahap selanjutnya. Namun, sayangnya, rencana tidak berjalan mulus. Akankah Jono kembali harus menjalani status jomblonya? Atau mungkin akan muncul keajaiban kenalan tersebut menjadi pacar pertamanya?" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
